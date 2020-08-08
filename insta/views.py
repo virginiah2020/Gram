@@ -10,3 +10,4 @@ def home(request):
     # profile = Profile.objects.all()
     # print(likes)
     # return render(request,'home.html',locals())
+    return HttpResponse
