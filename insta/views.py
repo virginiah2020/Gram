@@ -4,6 +4,7 @@ from .models import Image, Profile,Comment
 from .forms import ProfileForm,ImageForm,CommentForm
 from friendship.exceptions import AlreadyExistsError
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import User
 # Create your views here.
 
 @login_required(login_url='/accounts/login/')
@@ -16,6 +17,7 @@ def home(request):
     # print(likes)
     return render(request,'home.html',locals())
 
+@login_required(login_url='accounts/login/')
 def add_image(request):
     current_user = request.user
     if request.method == 'POST':
@@ -31,6 +33,7 @@ def add_image(request):
     
     return render(request,'image.html',locals())
 
+@login_required(login_url='/login')
 def profile(request):
     current_user = request.user
     # profile_details = Profile.objects.get(owner_id=current_user.id)
@@ -45,6 +48,7 @@ def profile(request):
 
     return render(request, 'profile/new.html', locals())
 
+@login_required(login_url='/accounts/login/')
 def display_profile(request, id):
     seekuser=User.objects.filter(id=id).first()
     profile = seekuser.profile
