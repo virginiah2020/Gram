@@ -53,3 +53,15 @@ def display_profile(request, id):
     pip_following=Follow.objects.following(request.user)
 
     return render(request,'profile/profile.html',locals())
+
+def search(request):
+    profiles = User.objects.all()
+
+    if 'username' in request.GET and request.GET['username']:
+        search_term = request.GET.get('username')
+        results = User.objects.filter(username__icontains=search_term)
+        print(results)
+
+        return render(request,'results.html',locals())
+
+    return redirect(home)
