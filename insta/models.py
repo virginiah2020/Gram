@@ -10,3 +10,13 @@ class Profile(models.Model):
     bio = models.CharField(max_length=255)
     owner = models.OneToOneField(User,blank=True, on_delete=models.CASCADE, related_name="profile")
 
+
+    def __str__(self):
+        return str(self.bio)
+
+
+    def profile_save(self):
+        self.save()
+
+    def delete_profile(self):
+        self.delete()
