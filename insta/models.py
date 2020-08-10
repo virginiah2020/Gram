@@ -56,7 +56,7 @@ class Image(models.Model):
 
 class Comment(models.Model):
     image = models.ForeignKey(Image,blank=True, on_delete=models.CASCADE,related_name='comment')
-    comment_owner = models.ForeignKey(User, blank=True)
+    comment_owner = models.ForeignKey(User, blank=True,on_delete=models.CASCADE)
     comment= models.TextField()
 
     def save_comment(self):
