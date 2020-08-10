@@ -1,22 +1,27 @@
-/* @media only screen and (max-width: 475px)
-.download{
-    width:45%;
-    display:flex;
-        flex-direction:row;
-        display:inline; */
-/* } */
-.navbar{
-    background-color:white;
-}
-.instaicon{
-    display: inline-block;
-    background-image: url(/static/images/96319a506a03.png);
-    padding:0px;
-}a:hover {
-    text-decoration: none;
-    cursor: pointer;
+#navMain {
+    font-family: 'Raleway';
+    font-size: 20px;
+    background: rgb(255, 255, 255);
 }
 
+#navMain .navbar-toggler {
+    font-size: 16px;
+    padding: 11px;
+    color: rgb(0, 0, 0);
+}
+
+#navMain a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+}
+
+#navMain .navbar-nav .nav-item:active,
+#navMain .navbar-nav .nav-item:focus {
+    outline: none;
+    background-color: rgb(240, 120, 120);
+
+
+}
 .home-images {
     background-color: #fff;
     border: 1px solid #e6e6e6;

@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'insta',
     'bootstrap4',
     'pyuploadcare.dj',
+    'friendship',
 
 ]
 
