@@ -31,12 +31,12 @@ class Profile(models.Model):
         profiles = cls.objects.filter(owner__contains=owner)
         return profiles
 
-    class Image(models.Model):
-        pic=ImageField(manual_crop='1080x800', blank=True)
-        name= models.CharField(max_length=55)
-        caption = models.TextField(blank=True)
-        profile= models.ForeignKey(User, blank=True,on_delete=models.CASCADE)
-        profile_details = models.ForeignKey(Profile)
+class Image(models.Model):
+    pic=ImageField(manual_crop='1080x800', blank=True)
+    name= models.CharField(max_length=55)
+    caption = models.TextField(blank=True)
+    profile= models.ForeignKey(User, blank=True,on_delete=models.CASCADE)
+    profile_details = models.ForeignKey(Profile,on_delete=models.CASCADE)
     
 
 
@@ -54,3 +54,21 @@ class Profile(models.Model):
         images = Image.objects.filter(profile__pk=profile)
         return images
 
+class Comment(models.Model):
+    image = models.ForeignKey(Image,blank=True, on_delete=models.CASCADE,related_name='comment')
+    comment_owner = models.ForeignKey(User, blank=True)
+    comment= models.TextField()
+
+    def save_comment(self):
+        self.save()
+
+    def delete_comment(self):
+        self.delete()
+
+    @classmethod
+    def get_image_comments(cls, id):
+        comments = Comment.objects.filter(image__pk=id)
+        return comments
+
+    def __str__(self):
+        return str(self.comment)
