@@ -73,6 +73,6 @@ class Comment(models.Model):
     def __str__(self):
         return str(self.comment)
 
-class Likes(models.Model):
-    liker=models.ForeignKey(User)
-    image =models.ForeignKey(Image)
+# class Likes(models.Model):
+#     liker=models.ForeignKey(User,on_delete=models.CASCADE)
+#     image =models.ForeignKey(Image,on_delete=models.CASCADE)

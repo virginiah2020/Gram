@@ -6,9 +6,9 @@ def home(request):
     current_user = request.user
     all_images = Image.objects.all()
     comments = Comment.objects.all()
-    likes = Likes.objects.all
+    # likes = Likes.objects.all
     profile = Profile.objects.all()
-    print(likes)
+    # print(likes)
     return render(request,'home.html',locals())
 
 def add_image(request):
