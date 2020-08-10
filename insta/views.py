@@ -1,6 +1,7 @@
 from django.shortcuts import render,redirect
 from django.http  import Http404
 from .models import Image, Profile,Comment
+from .forms import ProfileForm,ImageForm,CommentForm
 # Create your views here.
 def home(request):
     current_user = request.user
