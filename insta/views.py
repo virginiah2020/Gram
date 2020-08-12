@@ -1,6 +1,6 @@
 from django.shortcuts import render,redirect
 from django.http  import Http404
-from .models import Image, Profile,Comment
+from .models import Image, Profile,Comment,Follow, Likes
 from .forms import ProfileForm,ImageForm,CommentForm
 from friendship.exceptions import AlreadyExistsError
 from django.contrib.auth.decorators import login_required

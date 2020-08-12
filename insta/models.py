@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 from friendship.models import Friend,Follow,Block
 from pyuploadcare.dj.models import ImageField
 
+
 # Create your models here.
 
 class Profile(models.Model):

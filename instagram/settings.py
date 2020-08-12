@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 
 
 import os
+import django_heroku
+import dj_database_url
 
 # os.environ["DJANGO_SETTINGS_MODULE"] = "mysite.settings" 
 # import django
@@ -27,7 +29,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = '(*zsobvnjz2zw2lg)4op$f8!o!b7jz569_8-=c-wz_=k1gqw6s'
-
+# SECRET_KEY=os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
@@ -47,10 +49,13 @@ INSTALLED_APPS = [
     'bootstrap4',
     'pyuploadcare.dj',
     'friendship',
+    
+
 
 ]
 
 MIDDLEWARE = [
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -129,6 +134,13 @@ USE_L10N = True
 
 USE_TZ = True
 
+# AUTH USER MODEL
+# AUTH_USER_MODEL = "Accounts.User" 
+
+LOGIN_URL = 'index'
+#LOGIN_REDIRECT_URL  = 'login_success'
+
+LOGOUT_REDIRECT_URL = 'home'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
@@ -139,11 +151,15 @@ STATICFILES_DIRS = [
 ]
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 
 UPLOADCARE = {
-    'pub_key':'112233',
-    'secret':'11223344',
+    'pub_key':'cdcde9d88fea3c0d203e',
+    'secret':'8b3cceb6c375319683f6',
 }
 
+# Configure Django App for Heroku.
+django_heroku.settings(locals())

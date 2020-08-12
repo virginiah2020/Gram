@@ -1,6 +1,4 @@
 {% extends 'registration/base.html' %}
-
-
 {% block content %}
 <div class="container">
     <div class="row">
@@ -8,7 +6,7 @@
             {% for image in all_images %}
             <div class="card">
                 <a href="{% url 'showprofile' id=image.profile.id %}">
-                    <img src="{{image.profile_details.profile_pic.cdn_url}}" class="rounded-circle" style="width:10%; height:auto" alt=""/>
+                    <img src="{{image.profile_details.profile_pic.cdn_url}}"  style="width:10%; height:auto" alt=""/>
                         {{image.profile.username}}</a>
                 <hr>
                 <div class="card-img-top">
@@ -45,7 +43,7 @@
                                 </div>
 
             {% empty %}
-            <h2>No images. Follow people to see their images</h2>
+            <h2>Follow people to see more images</h2>
             <p><a href= "{% url 'upload_image' %}">Add Image</a></p>
 
             {% endfor %}

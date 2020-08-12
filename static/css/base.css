@@ -1,38 +1,6 @@
-#navMain {
-    font-family: 'Raleway';
-    font-size: 20px;
-    background: rgb(255, 255, 255);
-}
-
-#navMain .navbar-toggler {
-    font-size: 16px;
-    padding: 11px;
-    color: rgb(0, 0, 0);
-}
-
-#navMain a {
-    color: rgb(0, 0, 0);
-    text-decoration: none;
-}
-
-#navMain .navbar-nav .nav-item:active,
-#navMain .navbar-nav .nav-item:focus {
-    outline: none;
-    background-color: rgb(240, 120, 120);
-
-
-}
-.home-images {
-    background-color: #fff;
-    border: 1px solid #e6e6e6;
-    border-radius: 1px;
-    margin: 0 0 10px;
-}
-
 .home-images img {
-    width: 100%;
-    border-top: 1px solid #e6e6e6;
-    border-bottom: 1px solid #e6e6e6;
+    width: 70%;
+   
 }
 
 .top {
@@ -45,8 +13,8 @@
 }
 
 .top-section img {
-    width: 10rem;
-    height: 10rem;
+    width: 8rem;
+    height: 8rem;
 }
 
 .profile-image {
@@ -54,21 +22,8 @@
     justify-content: center;
 }
 
-.profile-image img {
-    border-radius: 10rem;
-}
-
-.user-images img {
-    width: 100%;
-}
-.images {
-    padding: 5px;
-    height: 33.3%;
-    overflow: hidden;
-}
 
 .username {
-    font-family: 'Raleway';
     font-size: 35px;
 }
 
@@ -128,14 +83,5 @@
     height: 180px;
     border-radius: 20rem;
     margin: 2rem 0;
-}
-p{
-    font-family: 'Montserrat'
-}
-.font1{
-    font-family: 'Catamaran';
-}
-.font2{
-    font-family: 'Julius Sans One';
 }
 
